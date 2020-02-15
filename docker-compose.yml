@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  beforianos-postgres:
+    image: postgres
+    container_name: beforianos-postgres
+    environment:
+      - POSTGRES_USER=beforianos
+      - POSTGRES_PASSWORD=beforianos
+      - POSTGRES_DB=beforianos
+    ports:
+      - '22201:5432'
+    networks:
+      - beforianos-network
+
+networks:
+  beforianos-network:
+    driver: bridge
