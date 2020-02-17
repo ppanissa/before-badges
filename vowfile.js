@@ -11,7 +11,9 @@
 */
 
 // Uncomment when want to run migrations
+const rimraf = require('rimraf');
 const ace = require('@adonisjs/ace');
+const Helpers = use('Helpers');
 
 module.exports = (cli, runner) => {
   runner.before(async () => {
@@ -59,6 +61,16 @@ module.exports = (cli, runner) => {
     use('Adonis/Src/Server')
       .getInstance()
       .close();
+
+    /*
+    |--------------------------------------------------------------------------
+    | Clear Path Upload Files
+    |--------------------------------------------------------------------------
+    |
+    | Shutdown the HTTP server when all tests have been executed.
+    |
+    */
+    rimraf.sync(Helpers.tmpPath('uploads/testing'));
 
     /*
     |--------------------------------------------------------------------------

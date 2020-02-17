@@ -51,6 +51,7 @@ class FileController {
         .status(HttpStatus.OK)
         .json({ message: 'Arquivo removido com sucesso.' });
     } catch (e) {
+      console.log(e);
       return response.status(HttpStatus.UNAUTHORIZED).json({
         message: 'Deu um B.O.zinho para excluír o arquivo...',
       });

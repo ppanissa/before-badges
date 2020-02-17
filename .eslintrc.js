@@ -4,10 +4,8 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: ['standard', 'prettier'],
+  extends: ['standard', 'plugin:prettier/recommended'],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
     use: 'readonly',
   },
   plugins: ['prettier'],
