@@ -20,6 +20,8 @@ class UserSchema extends Schema {
         .unique();
       table.string('password', 60).notNullable();
       table.boolean('is_active').default(false);
+      table.string('token');
+      table.date('token_created_at');
       table.timestamps();
     });
   }

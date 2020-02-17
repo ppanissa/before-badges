@@ -15,8 +15,12 @@ const providers = [
   '@adonisjs/auth/providers/AuthProvider',
   '@adonisjs/bodyparser/providers/BodyParserProvider',
   '@adonisjs/cors/providers/CorsProvider',
+  'adonis-swagger/providers/SwaggerProvider',
   '@adonisjs/lucid/providers/LucidProvider',
   '@adonisjs/drive/providers/DriveProvider',
+  '@rocketseat/adonis-bull/providers/Bull',
+  '@adonisjs/framework/providers/ViewProvider',
+  '@adonisjs/mail/providers/MailProvider',
   '@adonisjs/vow/providers/VowProvider',
 ];
 

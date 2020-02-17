@@ -72,6 +72,28 @@ module.exports = {
     password: 'password',
     options: {
       secret: Env.get('APP_KEY'),
+      expiresIn: '1d',
+    },
+  },
+
+  /*
+  |--------------------------------------------------------------------------
+  | Jwt Username
+  |--------------------------------------------------------------------------
+  |
+  | The jwt authenticator works by passing a jwt token on each HTTP request
+  | via HTTP `Authorization` header.
+  |
+  */
+  jwtUsername: {
+    serializer: 'lucid',
+    model: 'App/Models/User',
+    scheme: 'jwt',
+    uid: 'username',
+    password: 'password',
+    options: {
+      secret: Env.get('APP_KEY'),
+      expiresIn: '1d',
     },
   },
 
