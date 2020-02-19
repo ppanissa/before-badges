@@ -83,6 +83,7 @@ $ ./run bash container_name (api / pg / redis)
 
 | Command                          | Descrição                                                    |
 | -------------------------------- | ------------------------------------------------------------ |
+| ./run adonis                     | Comandos do adonis (Estilo: **php artisan**)                 |
 | ./run start                      | Iniciar Aplicação Docker                                     |
 | ./run restart                    | Reniciar Docker                                              |
 | ./run restart **container_name** | Reniciar os containers [ **api** / **pg** / **redis** ]      |
@@ -90,3 +91,11 @@ $ ./run bash container_name (api / pg / redis)
 | ./run bash **container_name**    | Acessar o bash do container [ **api** / **pg** / **redis** ] |
 | ./run test                       | Rodar os tests do sistema                                    |
 | ./run recreate                   | Ele irá apagar todos os container e recria-los               |
+
+## List Comandos "ADONIS"
+
+```sh
+$ ./run adonis lista_de_comandos_abaixo
+```
+
+<img src=".github/assets/cmd_ss.png" width="750">
