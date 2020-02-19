@@ -1,8 +1,8 @@
 {
-  "name": "api-beforianos",
+  "name": "api-badges",
   "version": "1.0.0",
   "adonis-version": "4.1.0",
-  "description": "Beforianos, sistema interno para colaboradores.",
+  "description": "Before Api, sistema interno para colaboradores.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -14,10 +14,10 @@
     "rh"
   ],
   "author": "Paulo Panissa <paulo.panissa@before.com.br>",
-  "license": "BeforeTI",
+  "license": "MIT",
   "private": true,
   "dependencies": {
-    "@adonisjs/ace": "^5.0.8",
+    "@adonisjs/ace": "^6.8.3",
     "@adonisjs/auth": "^3.0.7",
     "@adonisjs/bodyparser": "^2.0.5",
     "@adonisjs/cors": "^1.0.7",
