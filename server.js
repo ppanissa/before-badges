@@ -21,6 +21,7 @@ const { Ignitor } = require('@adonisjs/ignitor');
 
 new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
-  .preLoad('start/bull') // Add This Line
+  .wsServer() // boot the WebSocket server
+  .preLoad('start/bull') // Start bull server
   .fireHttpServer()
   .catch(console.error);

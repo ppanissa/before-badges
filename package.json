@@ -28,12 +28,15 @@
     "@adonisjs/lucid": "^6.1.3",
     "@adonisjs/mail": "^3.0.10",
     "@adonisjs/vow": "^1.0.17",
+    "@adonisjs/websocket": "^1.0.12",
     "@rocketseat/adonis-bull": "^0.2.1",
-    "adonis-swagger": "git@github.com:ahmadarif/adonis-swagger.git#v1.3.0",
+    "@sci-ventures/adonis-swagger": "^1.3.0-sci-2",
+    "adonis-acl": "^1.1.1",
     "date-fns": "^2.9.0",
     "http-status-codes": "^1.4.0",
     "pg": "^7.18.1",
-    "slugify": "^1.3.6"
+    "slugify": "^1.3.6",
+    "swagger-jsdoc": "^3.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
