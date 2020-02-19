@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function check_key_and_create() {
+  inputFile=.env
+  while read -r line; do
+    if [[ $line == 'APP_KEY=' ]]; then
+      bash -c "adonis key:generate"
+      # init '--key'
+    fi
+  done < "$inputFile"
+}
+
+
+function install() {
+  echo $@
+  docker exec -it before-api "$@"
+}
+
+function_exists() {
+  declare -f -F $1 > /dev/null
+  return $?
+}
+
+printf ""
+
+case "$1" in
+  create-key) function_exists check_key_and_create && check_key_and_create
+    ;;
+  yarn) function_exists install && install $@
+    ;;
+  adonis)  function_exists install && install $@
+    ;;
+  npm)  function_exists install && install $@
+    ;;
+  *)  script/before.sh $1 $2
+    ;;
+esac
+
+

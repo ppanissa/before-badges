@@ -1,27 +1,45 @@
-version: '3.3'
+version: '3.6'
 services:
-  beforianos-postgres:
+  before-api:
+    build: .
+    container_name: before-api
+    volumes:
+      - .:/home/node/api
+    depends_on:
+      - before-postgres
+      - before-redis
+    links:
+      - before-postgres
+      - before-redis
+    networks:
+      - before-network
+    command: bash -c "./run create-key && adonis serve --dev"
+    ports:
+      - 22200:3333
+      - 22203:10000
+
+  before-postgres:
     image: postgres
-    container_name: beforianos-postgres
+    container_name: before-postgres
     environment:
-      - POSTGRES_USER=beforianos
-      - POSTGRES_PASSWORD=beforianos
-      - POSTGRES_DB=beforianos
+      - POSTGRES_USER=before
+      - POSTGRES_PASSWORD=before
+      - POSTGRES_DB=before
     ports:
       - '22201:5432'
     networks:
-      - beforianos-network
+      - before-network
 
-  beforianos-redis:
+  before-redis:
     image: bitnami/redis
-    container_name: beforianos-redis
+    container_name: before-redis
     environment:
-      - REDIS_PASSWORD=beforianos
+      - REDIS_PASSWORD=before
     ports:
       - '22202:6379'
     networks:
-      - beforianos-network
+      - before-network
 
 networks:
-  beforianos-network:
+  before-network:
     driver: bridge
