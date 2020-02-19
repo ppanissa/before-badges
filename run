@@ -8,6 +8,11 @@ function check_key_and_create() {
       # init '--key'
     fi
   done < "$inputFile"
+
+  bash -c "adonis migration:run \
+   && adonis seed --files RoleSeeder.js \
+   && adonis seed --files PermissionSeeder.js"
+
 }
 
 
@@ -23,7 +28,7 @@ function_exists() {
 printf ""
 
 case "$1" in
-  create-key) function_exists check_key_and_create && check_key_and_create
+  init-project) function_exists check_key_and_create && check_key_and_create
     ;;
   yarn) function_exists install && install $@
     ;;
